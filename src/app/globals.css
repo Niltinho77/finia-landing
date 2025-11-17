@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== Reset/geral ====== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ====== Base da página ====== */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  /* Fundo dark padrão do site */
+  background: #020617; /* slate-950 */
+  color: #e5e7eb;      /* slate-200 */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Remove sublinhado padrão de links e herda cor */
+a {
+  text-decoration: none;
+}
+
+/* NÃO sobrescreve spans dentro */
+a:not(.text-emerald-400) {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ====== Ajuste de containers (opcional, mas ajuda) ====== */
+.container {
+  max-width: 1120px;
+}
+
+/* ====== Scrollbar mais discreta (opcional) ====== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937; /* slate-800 */
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563; /* slate-600 */
+}
