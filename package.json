@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npx serve@latest -s out -l 8080",
+  "lint": "next lint",
+  "predeploy": "npm run build",
+  "deploy": "touch out/.nojekyll && gh-pages -d out"
+
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
