@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // NÃO usar basePath nem assetPrefix para domínio próprio
+  output: 'export',
   images: {
-    unoptimized: true, // opcional
+    unoptimized: true,
   },
 };
 
