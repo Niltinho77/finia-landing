@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -11,8 +12,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "FinIA - Assistente Financeiro",
-  description:
-    "Seu Assistente do dia a dia",
+  description: "Seu assistente do dia a dia",
 };
 
 export default function RootLayout({
@@ -21,8 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
+        {/* Font Awesome */}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -30,12 +31,31 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+
+        {/* Favicon */}
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
+        {/* PLAUSIBLE ANALYTICS */}
+        <script
+          async
+          src="https://plausible.io/js/pa-ofmpVdh8O6EV53x9izbDR.js"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.plausible = window.plausible || function() {
+                (plausible.q = plausible.q || []).push(arguments)
+              };
+              plausible.init = plausible.init || function(i) {
+                plausible.o = i || {};
+              };
+              plausible.init();
+            `,
+          }}
+        />
       </head>
       <body className={roboto.className}>
-        <Layout>
-          {children}
-        </Layout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
