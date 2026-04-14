@@ -3,162 +3,184 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const BENEFICIOS_PREMIUM = [
-  "Registros ilimitados de gastos.",
-  "Classificação automática por categorias.",
-  "Resumos financeiros completos direto no WhatsApp.",
-  "Acesso ao painel web com gráficos e relatórios detalhados.",
-  "Histórico completo das suas movimentações.",
-  "Organização simples sem planilhas e sem aplicativos extras."
+const WA_PREMIUM =
+  "https://wa.me/5555991856277?text=" +
+  encodeURIComponent(
+    "Oi, cheguei pelo site e quero assinar o plano Premium do FinIA."
+  );
+
+const WA_FREE =
+  "https://wa.me/5555991856277?text=" +
+  encodeURIComponent(
+    "Oi, quero testar o FinIA gratuitamente pelo WhatsApp."
+  );
+
+const FEATURES_FREE = [
+  "3 dias de acesso completo",
+  "Até 10 transações registradas",
+  "Consultas e resumos no WhatsApp",
+  "Sem cartão de crédito",
 ];
 
-const PARA_QUEM_E = [
-  "Quem quer controlar melhor o próprio dinheiro sem planilhas.",
-  "Quem gosta de resolver tudo pelo WhatsApp de forma rápida.",
-  "Quem mistura gastos pessoais e do trabalho e precisa de clareza.",
-  "Quem quer um resumo simples de quanto entrou, saiu e sobrou no mês.",
-  "Quem quer economizar tempo organizando a vida financeira."
+const FEATURES_PREMIUM = [
+  "Registros ilimitados de gastos e entradas",
+  "Categorização automática por IA",
+  "Resumos e gráficos ilimitados",
+  "Painel web com filtros e relatórios",
+  "Lembretes com data e horário",
+  "Histórico completo de movimentações",
+  "Suporte prioritário",
 ];
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, scale: 0.97 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, ease: "easeOut", delay: 0.1 },
-  },
-};
-
-export function MobileConvenience() {
+export default function MobileConvenience() {
   return (
     <section
       id="plano-premium"
-      className="relative overflow-hidden bg-slate-950 px-4 py-20 md:py-24 lg:px-8"
+      className="relative overflow-hidden bg-slate-950 px-4 py-20 md:py-28 lg:px-8"
     >
-      {/* fundo suave com glows na mesma identidade do site */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.14),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(34,197,94,0.14),_transparent_55%)]" />
+      {/* Fundo */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-10%,rgba(16,185,129,0.12),transparent)]" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-emerald-500/5 blur-3xl" />
 
+      {/* Header */}
       <motion.div
-        className="relative mx-auto flex max-w-4xl flex-col items-center text-center"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.35 }}
+        className="relative mx-auto mb-14 max-w-2xl text-center"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.55 }}
       >
-        {/* badge */}
-        <p
-          className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em]"
-          style={{ color: "#34d399" }}
-        >
-          plano premium finIA
+        <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-400">
+          Planos e preços
         </p>
-
-        {/* título principal */}
-        <h2 className="text-balance text-2xl font-semibold text-white md:text-3xl">
-          Pare de se perder no dinheiro e tenha{" "}
-          <span style={{ color: "#34d399" }}>clareza total das suas finanças</span>.
+        <h2 className="text-balance text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+          Comece de graça.{" "}
+          <span className="text-emerald-400">Evolua quando quiser.</span>
         </h2>
-
-        {/* subtítulo */}
-        <p className="mt-3 max-w-2xl text-sm text-slate-300/90 md:text-base">
-          O plano Premium desbloqueia todo o potencial do FinIA: mais registros,
-          mais lembretes e uma visão completa do seu mês, sem depender de planilhas.
+        <p className="mt-4 text-sm text-slate-400 md:text-base">
+          Teste tudo por 3 dias sem compromisso. O Premium desbloqueia o potencial completo.
         </p>
       </motion.div>
 
-      {/* CARD PRINCIPAL */}
-      <motion.div
-        className="relative mx-auto mt-10 max-w-4xl"
-        variants={cardVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.35 }}
-      >
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/80 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.85)] backdrop-blur md:p-8">
-          <div className="grid gap-8 md:grid-cols-[1.7fr_minmax(0,1.2fr)] md:items-center">
-            {/* LADO ESQUERDO – benefícios */}
-            <div className="text-left">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-                o que você leva no premium
-              </p>
+      {/* Cards */}
+      <div className="relative mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
 
-              <ul className="mt-3 space-y-2 text-sm text-slate-200 md:text-[15px]">
-                {BENEFICIOS_PREMIUM.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span
-                      className="mt-[5px] inline-flex h-1.5 w-1.5 flex-none rounded-full"
-                      style={{ backgroundColor: "#34d399" }}
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-                ideal para
-              </p>
-
-              <ul className="mt-2 space-y-1.5 text-xs text-slate-400 md:text-[13px]">
-                {PARA_QUEM_E.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-[6px] inline-flex h-1 w-3 flex-none rounded-full bg-slate-600" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+        {/* TRIAL */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/50 p-6 backdrop-blur"
+        >
+          <div className="mb-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+              Teste grátis
+            </p>
+            <div className="mt-2 flex items-baseline gap-1">
+              <span className="text-4xl font-black text-white">R$ 0</span>
+              <span className="text-sm text-slate-400">por 3 dias</span>
             </div>
-
-            {/* LADO DIREITO – preço + CTA */}
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-slate-700 bg-slate-950/70 px-5 py-6 text-center">
-              <p className="text-xs font-medium text-slate-400">
-                investimento mensal
-              </p>
-
-              <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-sm text-slate-300">R$ </span>
-                <span className="text-3xl font-semibold text-white md:text-4xl">
-                  9,90
-                </span>
-                <span className="text-xs text-slate-400">/ mês</span>
-              </div>
-
-              
-
-              {/* CTA PRINCIPAL */}
-              <a
-              href={
-                "https://wa.me/5555991856277?text=" +
-                encodeURIComponent(
-                  "Oi, cheguei pelo site e quero assinar o plano Premium do FinIA."
-                )
-              }
-              target="_blank"
-              rel="noreferrer"
-              className="w-full rounded-full bg-emerald-500 px-4 py-2 text-center text-xs font-semibold text-slate-950 shadow-md shadow-emerald-500/25 transition hover:bg-emerald-400"
-              style={{ backgroundColor: "#34d399", color: "#020617" }}
-            
-            >
-              Assinar plano Premium
-            </a>
-
-              <p className="mt-3 text-[11px] text-slate-500">
-                Você pode cancelar quando quiser.
-              </p>
-            </div>
+            <p className="mt-1 text-xs text-slate-500">
+              Sem cartão. Ativa no WhatsApp.
+            </p>
           </div>
-        </div>
-      </motion.div>
+
+          <ul className="flex flex-1 flex-col gap-2.5 text-sm text-slate-300">
+            {FEATURES_FREE.map((f) => (
+              <li key={f} className="flex items-start gap-2.5">
+                <svg viewBox="0 0 20 20" fill="#34d399" className="mt-0.5 h-4 w-4 shrink-0">
+                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={WA_FREE}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-7 block rounded-full border border-slate-700 py-3 text-center text-sm font-semibold text-slate-200 transition hover:border-emerald-500/50 hover:bg-emerald-500/5"
+          >
+            Começar de graça →
+          </a>
+        </motion.div>
+
+        {/* PREMIUM */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
+          className="relative flex flex-col overflow-hidden rounded-2xl border border-emerald-500/40 bg-slate-900/80 p-6 shadow-[0_0_60px_rgba(16,185,129,0.12)] backdrop-blur"
+        >
+          {/* Badge popular */}
+          <div className="absolute right-4 top-4">
+            <span className="rounded-full bg-emerald-500 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-slate-950">
+              Mais popular
+            </span>
+          </div>
+
+          {/* Glow interno */}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(16,185,129,0.08),transparent)]" />
+
+          <div className="relative mb-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-400">
+              Premium
+            </p>
+            <div className="mt-2 flex items-baseline gap-1">
+              <span className="mr-1 text-sm text-slate-500 line-through">R$ 29,90</span>
+              <span className="text-4xl font-black text-white">R$ 9,90</span>
+              <span className="text-sm text-slate-400">/ mês</span>
+            </div>
+            <p className="mt-1 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-300">
+              🔥 Oferta de lançamento
+            </p>
+          </div>
+
+          <ul className="relative flex flex-1 flex-col gap-2.5 text-sm text-slate-200">
+            {FEATURES_PREMIUM.map((f) => (
+              <li key={f} className="flex items-start gap-2.5">
+                <svg viewBox="0 0 20 20" fill="#34d399" className="mt-0.5 h-4 w-4 shrink-0">
+                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                </svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={WA_PREMIUM}
+            target="_blank"
+            rel="noreferrer"
+            className="relative mt-7 block rounded-full py-3.5 text-center text-sm font-bold text-slate-950 shadow-[0_0_25px_rgba(52,211,153,0.4)] transition hover:opacity-90"
+            style={{ backgroundColor: "#34d399" }}
+          >
+            Assinar o Premium agora →
+          </a>
+
+          <p className="relative mt-3 text-center text-[11px] text-slate-500">
+            Cancele quando quiser. Sem burocracia.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Garantias */}
+      <div className="relative mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-6 text-xs text-slate-500">
+        <span className="flex items-center gap-1.5">
+          <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-slate-600"><path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" /></svg>
+          Pagamento seguro via Stripe
+        </span>
+        <span className="flex items-center gap-1.5">
+          <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-slate-600"><path d="M2 3a1 1 0 00-1 1v1a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1H2zM2 8.5h16v7a1 1 0 01-1 1H3a1 1 0 01-1-1v-7z"/></svg>
+          Ativação automática
+        </span>
+        <span className="flex items-center gap-1.5">
+          <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-slate-600"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+          Cancele quando quiser
+        </span>
+      </div>
     </section>
   );
 }
-
-export default MobileConvenience;

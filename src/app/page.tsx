@@ -1,40 +1,41 @@
 // src/app/page.tsx
 
-// components compartilhados
 import { Navbar, Footer } from "@/components";
 
-// sections
 import Hero from "./hero";
-import VideoIntro from "./video-intro";
+import Stats from "./stats";
 import Feature from "./feature";
 import MobileConvenience from "./mobile-convenience";
 import Testimonials from "./testimonials";
 import Faqs from "./faqs";
+import CtaSection from "./cta-section";
 
 export default function Campaign() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50">
-      {/* Navbar fixa no topo */}
       <Navbar />
 
       <main className="flex flex-col">
-        {/* HERO – dobra principal */}
+        {/* Dobra principal */}
         <Hero />
 
-        {/* VÍDEO EXPLICATIVO */}
-        <VideoIntro />
+        {/* Números de prova social */}
+        <Stats />
 
-        {/* BENEFÍCIOS / FEATURES */}
+        {/* Como funciona — timeline de 4 passos */}
         <Feature />
 
-        {/* COMO FUNCIONA (âncora do botão do Hero) */}
+        {/* Planos: Trial vs Premium */}
         <MobileConvenience />
 
-        {/* PROVA SOCIAL */}
+        {/* Depoimentos reais */}
         <Testimonials />
 
-        {/* PERGUNTAS FREQUENTES */}
+        {/* FAQ */}
         <Faqs />
+
+        {/* CTA final antes do footer */}
+        <CtaSection />
       </main>
 
       <Footer />
