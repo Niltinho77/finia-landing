@@ -54,10 +54,6 @@ export function Footer() {
               Seu assistente financeiro por IA direto no WhatsApp.
               Rápido, simples e sempre com você.
             </p>
-            <div className="mt-4 flex gap-1 text-yellow-400 text-sm">
-              {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
-              <span className="ml-1 text-slate-400 text-xs">4.9 / 5</span>
-            </div>
           </div>
 
           {/* Navegação */}

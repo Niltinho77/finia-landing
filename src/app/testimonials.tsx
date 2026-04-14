@@ -55,12 +55,9 @@ export default function Testimonials() {
           Sem planilhas, sem apps extras. Só o WhatsApp e a Lume.
         </p>
 
-        {/* Mini-rating */}
-        <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-1.5 text-sm backdrop-blur">
-          <span className="text-yellow-400">★★★★★</span>
-          <span className="text-slate-300 font-semibold">4.9</span>
-          <span className="text-slate-500">·</span>
-          <span className="text-slate-400 text-xs">+1.200 usuários</span>
+        {/* Badge simples */}
+        <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/60 px-4 py-1.5 text-xs text-slate-400 backdrop-blur">
+          Experiências reais de quem já usa o FinIA
         </div>
       </motion.div>
 

@@ -3,7 +3,6 @@
 import { Navbar, Footer } from "@/components";
 
 import Hero from "./hero";
-import Stats from "./stats";
 import Feature from "./feature";
 import MobileConvenience from "./mobile-convenience";
 import Testimonials from "./testimonials";
@@ -18,9 +17,6 @@ export default function Campaign() {
       <main className="flex flex-col">
         {/* Dobra principal */}
         <Hero />
-
-        {/* Números de prova social */}
-        <Stats />
 
         {/* Como funciona — timeline de 4 passos */}
         <Feature />

@@ -54,13 +54,6 @@ export function TestimonialCard({
           {title && <p className="text-xs text-slate-500">{title}</p>}
         </div>
 
-        {/* Badge verificado */}
-        <div className="ml-auto flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
-          <svg viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3">
-            <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-          </svg>
-          Verificado
-        </div>
       </div>
     </motion.div>
   );

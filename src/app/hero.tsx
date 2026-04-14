@@ -358,15 +358,15 @@ export default function Hero() {
               <p className="text-[10px] text-slate-400">para registrar</p>
             </motion.div>
 
-            {/* Badge flutuante – estrelas */}
+            {/* Badge flutuante – IA */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2.2, duration: 0.5 }}
               className="absolute -left-4 bottom-24 rounded-2xl border border-slate-700/60 bg-slate-900/95 px-3 py-2 shadow-xl backdrop-blur"
             >
-              <p className="text-[11px] text-yellow-400">★★★★★</p>
-              <p className="text-[10px] text-slate-400">+1.200 usuários</p>
+              <p className="text-[11px] text-emerald-400">🤖 IA avançada</p>
+              <p className="text-[10px] text-slate-400">GPT-4o-mini</p>
             </motion.div>
           </div>
         </motion.div>
